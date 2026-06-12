@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Readit helps readers search books, save them, create reading plans, and track reading progress."
+    />
+    <meta name="author" content="Jose Vega" />
+    <title>Readit | Reading Goal Tracker</title>
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script type="module" src="/src/main.js"></script>
+  </head>
+
+  <body>
+    <header class="site-header">
+      <a class="logo" href="/" aria-label="Readit home">
+        <span class="logo-icon" aria-hidden="true">▰</span>
+        <span>Readit</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/">Home</a>
+        <a href="/search/">Search</a>
+        <a href="/library/">Library</a>
+        <a href="/reading-plan/">Reading Plan</a>
+        <a href="/notes/">Notes</a>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <section class="hero">
+        <div class="hero-content">
+          <p class="eyebrow">Personal Reading Tracker</p>
+          <h1>Track your reading goals with clarity.</h1>
+          <p>
+            Search for books, save them to your personal library, create reading
+            plans, and measure your progress one page at a time.
+          </p>
+
+          <form class="search-form" id="home-search-form">
+            <label class="sr-only" for="home-search">Search for a book</label>
+            <input
+              id="home-search"
+              name="query"
+              type="search"
+              placeholder="Search for a book..."
+              required
+            />
+            <button type="submit">Search</button>
+          </form>
+
+          <div class="hero-actions">
+            <a class="button button-primary" href="/library/">Go to My Library</a>
+            <a class="button button-secondary" href="/reading-plan/">
+              Create Reading Plan
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-card" aria-label="Reading progress preview">
+          <p class="card-label">Currently Reading</p>
+          <h2>Atomic Habits</h2>
+          <p class="muted">Progress</p>
+
+          <div class="progress-track" aria-label="Reading progress 70%">
+            <span class="progress-bar" style="width: 70%"></span>
+          </div>
+
+          <p class="progress-text">210 / 300 pages · 70%</p>
+          <p class="daily-goal">Today’s goal: 15 pages</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Discover</p>
+          <h2>Recommended Books</h2>
+        </div>
+
+        <div class="book-grid" id="recommended-books" aria-live="polite"></div>
+      </section>
+
+      <section class="section split-section">
+        <div>
+          <p class="eyebrow">Why Readit?</p>
+          <h2>Turn your next book into a measurable plan.</h2>
+        </div>
+
+        <div class="feature-list">
+          <article class="feature-card">
+            <h3>Save books</h3>
+            <p>
+              Build a personal library with books you want to read, are reading,
+              or have already finished.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <h3>Create goals</h3>
+            <p>
+              Calculate how many pages you need to read based on your current
+              page and available reading days.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <h3>Track progress</h3>
+            <p>
+              Update your current page and see your percentage completed through
+              a visual progress bar.
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; <span id="current-year"></span> Readit | Not a real business</p>
+    </footer>
+  </body>
+</html>

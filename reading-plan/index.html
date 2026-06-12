@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Create a reading plan based on saved books in Readit."
+    />
+    <meta name="author" content="Jose Vega" />
+    <title>Reading Plan | Readit</title>
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script type="module" src="/src/main.js"></script>
+  </head>
+
+  <body>
+    <header class="site-header">
+      <a class="logo" href="/" aria-label="Readit home">
+        <span class="logo-icon" aria-hidden="true">▰</span>
+        <span>Readit</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/">Home</a>
+        <a href="/search/">Search</a>
+        <a href="/library/">Library</a>
+        <a href="/reading-plan/" aria-current="page">Reading Plan</a>
+        <a href="/notes/">Notes</a>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <section class="hero">
+        <div class="hero-content">
+          <p class="eyebrow">Reading Plan</p>
+          <h1>Create a measurable reading goal.</h1>
+          <p>
+            Select a saved book, enter your current page, and calculate your
+            daily reading target.
+          </p>
+
+          <div class="hero-actions">
+            <a class="button button-primary" href="/library/">View Library</a>
+            <a class="button button-secondary" href="/search/">Find Books</a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <p class="card-label">Goal Calculator</p>
+          <h2>Pages per day</h2>
+          <p>
+            Readit calculates how much you need to read to finish on time.
+          </p>
+        </div>
+      </section>
+
+      <section class="section split-section">
+        <div>
+          <p class="eyebrow">Plan Form</p>
+          <h2>Build your reading plan.</h2>
+          <p id="plan-result" class="muted">
+            Complete the form to calculate your daily reading goal.
+          </p>
+        </div>
+
+        <form class="feature-card stacked-form" id="reading-plan-form">
+          <label for="plan-book">Book</label>
+          <select id="plan-book" required></select>
+
+          <label for="plan-current-page">Current page</label>
+          <input id="plan-current-page" type="number" min="0" required />
+
+          <label for="plan-total-pages">Total pages</label>
+          <input id="plan-total-pages" type="number" min="1" required />
+
+          <label for="plan-days">Days to finish</label>
+          <input id="plan-days" type="number" min="1" required />
+
+          <button class="button button-primary" type="submit">
+            Calculate Plan
+          </button>
+        </form>
+      </section>
+
+      <section class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Saved Plan</p>
+          <h2>Current Reading Plan</h2>
+        </div>
+
+        <div id="saved-plan" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; <span id="current-year"></span> Readit | NOT a real business</p>
+    </footer>
+  </body>
+</html>

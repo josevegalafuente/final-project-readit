@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Manage saved books in your personal Readit library."
+    />
+    <meta name="author" content="Jose Vega" />
+    <title>Library | Readit</title>
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script type="module" src="/src/main.js"></script>
+  </head>
+
+  <body>
+    <header class="site-header">
+      <a class="logo" href="/" aria-label="Readit home">
+        <span class="logo-icon" aria-hidden="true">▰</span>
+        <span>Readit</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/">Home</a>
+        <a href="/search/">Search</a>
+        <a href="/library/" aria-current="page">Library</a>
+        <a href="/reading-plan/">Reading Plan</a>
+        <a href="/notes/">Notes</a>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <section class="hero">
+        <div class="hero-content">
+          <p class="eyebrow">Library</p>
+          <h1>Your saved books.</h1>
+          <p>
+            Books added from the Search page are saved here using localStorage.
+          </p>
+
+          <div class="hero-actions">
+            <a class="button button-primary" href="/search/">Find Books</a>
+            <a class="button button-secondary" href="/reading-plan/">
+              Create Reading Plan
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <p class="card-label">Saved Library</p>
+          <h2>Personal collection</h2>
+          <p>
+            Your saved books stay available even after refreshing the page.
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Saved Books</p>
+          <h2>My Library</h2>
+          <p id="library-empty-state" class="muted">
+            Your library is empty. Search for books and add them here.
+          </p>
+        </div>
+
+        <div class="book-grid" id="library-books" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; <span id="current-year"></span> Readit | NOT a real business</p>
+    </footer>
+  </body>
+</html>

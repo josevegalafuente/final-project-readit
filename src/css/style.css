@@ -1,0 +1,416 @@
+:root {
+  --primary: #235789;
+  --secondary: #f4f7fa;
+  --accent: #7ea8be;
+  --text: #1f2933;
+  --muted: #64748b;
+  --white: #ffffff;
+  --border: #d8e2ea;
+  --shadow: 0 18px 45px rgba(31, 41, 51, 0.12);
+  --radius: 18px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Poppins", Arial, sans-serif;
+  color: var(--text);
+  background-color: var(--white);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  padding: 1.25rem clamp(1rem, 4vw, 4rem);
+  border-bottom: 1px solid var(--border);
+  background-color: var(--white);
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  text-decoration: none;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.logo-icon {
+  display: grid;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 0.75rem;
+  background-color: var(--primary);
+  color: var(--white);
+  transform: rotate(-8deg);
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 1rem;
+  font-weight: 500;
+}
+
+.site-nav a {
+  text-decoration: none;
+  color: var(--muted);
+}
+
+.site-nav a:hover,
+.site-nav a:focus {
+  color: var(--primary);
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
+  gap: 2rem;
+  align-items: center;
+  padding: clamp(3rem, 8vw, 6rem) clamp(1rem, 4vw, 4rem);
+  background:
+    radial-gradient(circle at top right, rgba(126, 168, 190, 0.35), transparent 32rem),
+    linear-gradient(135deg, var(--secondary), var(--white));
+}
+
+.hero-content {
+  max-width: 760px;
+}
+
+.eyebrow {
+  margin: 0 0 0.75rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--primary);
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  margin-bottom: 1rem;
+  font-size: clamp(2.4rem, 6vw, 4.75rem);
+  line-height: 1.05;
+  letter-spacing: -0.05em;
+}
+
+h2 {
+  margin-bottom: 1rem;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  line-height: 1.12;
+  letter-spacing: -0.035em;
+}
+
+h3 {
+  margin-bottom: 0.5rem;
+}
+
+.hero p {
+  max-width: 640px;
+  color: var(--muted);
+  font-size: 1.08rem;
+  line-height: 1.75;
+}
+
+.search-form {
+  display: flex;
+  max-width: 640px;
+  margin: 2rem 0 1.25rem;
+  padding: 0.4rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background-color: var(--white);
+  box-shadow: 0 12px 35px rgba(31, 41, 51, 0.08);
+}
+
+.search-form input {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  padding: 0.85rem 1rem;
+  background: transparent;
+  color: var(--text);
+}
+
+.search-form button,
+.button {
+  border: 0;
+  border-radius: 999px;
+  padding: 0.85rem 1.2rem;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.search-form button,
+.button-primary {
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+.button-secondary {
+  border: 1px solid var(--border);
+  background-color: var(--white);
+  color: var(--primary);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+}
+
+.hero-card,
+.book-card,
+.feature-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background-color: var(--white);
+  box-shadow: var(--shadow);
+}
+
+.hero-card {
+  padding: 2rem;
+}
+
+.card-label,
+.book-category {
+  margin-bottom: 0.5rem;
+  color: var(--accent);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.muted,
+.progress-text,
+.daily-goal {
+  color: var(--muted);
+}
+
+.progress-track {
+  height: 0.85rem;
+  margin: 1rem 0;
+  overflow: hidden;
+  border-radius: 999px;
+  background-color: var(--secondary);
+}
+
+.progress-bar {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  animation: fill-progress 1.2s ease-out;
+}
+
+.section {
+  padding: clamp(3rem, 7vw, 5rem) clamp(1rem, 4vw, 4rem);
+}
+
+.section-heading {
+  max-width: 720px;
+  margin-bottom: 2rem;
+}
+
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.book-card {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  overflow: hidden;
+}
+
+.book-cover {
+  display: grid;
+  place-items: center;
+  min-height: 170px;
+  background: linear-gradient(145deg, var(--primary), var(--accent));
+  color: var(--white);
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.book-card-content {
+  padding: 1.25rem;
+}
+
+.text-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.split-section {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: 2rem;
+  background-color: var(--secondary);
+}
+
+.feature-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.feature-card {
+  padding: 1.5rem;
+}
+
+.feature-card p {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.site-footer {
+  padding: 1.5rem;
+  text-align: center;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+
+@keyframes fill-progress {
+  from {
+    width: 0;
+  }
+}
+
+@media (max-width: 860px) {
+  .site-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .site-nav {
+    justify-content: flex-start;
+  }
+
+  .hero,
+  .split-section {
+    grid-template-columns: 1fr;
+  }
+
+  .book-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .search-form {
+    align-items: stretch;
+    flex-direction: column;
+    border-radius: var(--radius);
+  }
+
+  .search-form button {
+    width: 100%;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .button {
+    text-align: center;
+  }
+
+  .book-card {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+.book-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+}
+
+.card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.small-button {
+  border: 0;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.small-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+.stacked-form {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.stacked-form label {
+  font-weight: 600;
+}
+
+.stacked-form input,
+.stacked-form select,
+.stacked-form textarea {
+  width: 100%;
+  border: 1px solid rgba(28, 36, 52, 0.15);
+  border-radius: 0.9rem;
+  padding: 0.85rem 1rem;
+  font: inherit;
+}
+
+.stacked-form textarea {
+  resize: vertical;
+}
