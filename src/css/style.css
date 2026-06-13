@@ -70,6 +70,13 @@ input {
   transform: rotate(-8deg);
 }
 
+.logo-image {
+  width: 2.25rem;
+  height: 2.25rem;
+  object-fit: contain;
+  display: block;
+}
+
 .site-nav {
   display: flex;
   flex-wrap: wrap;
