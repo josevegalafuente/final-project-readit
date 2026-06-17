@@ -69,7 +69,8 @@
           <p class="card-label">SMART SEARCH</p>
           <h2>Google Books</h2>
           <p>
-            Discover books faster with accurate results powered by one of the world’s largest book databases.
+            Discover books faster with accurate results powered by one of the
+            world’s largest book databases.
           </p>
         </div>
       </section>
@@ -84,6 +85,64 @@
         </div>
 
         <div class="book-grid" id="search-results" aria-live="polite"></div>
+      </section>
+
+      <section class="section split-section">
+        <div>
+          <p class="eyebrow">Manual Entry</p>
+          <h2>Can’t find a book?</h2>
+          <p class="muted">
+            Add a book manually and save it directly to your Readit library.
+            Manual books can also be used for reading plans and notes.
+          </p>
+          <p id="manual-book-message" class="manual-book-message" aria-live="polite"></p>
+        </div>
+
+        <form class="feature-card stacked-form" id="manual-book-form">
+          <label for="manual-book-title">Title</label>
+          <input
+            id="manual-book-title"
+            type="text"
+            placeholder="Book title"
+            required
+          />
+
+          <label for="manual-book-author">Author</label>
+          <input
+            id="manual-book-author"
+            type="text"
+            placeholder="Author name"
+            required
+          />
+
+          <label for="manual-book-pages">Total pages</label>
+          <input
+            id="manual-book-pages"
+            type="number"
+            min="1"
+            placeholder="320"
+            required
+          />
+
+          <label for="manual-book-category">Category</label>
+          <input
+            id="manual-book-category"
+            type="text"
+            placeholder="Personal Growth"
+            required
+          />
+
+          <label for="manual-book-description">Description</label>
+          <textarea
+            id="manual-book-description"
+            rows="5"
+            placeholder="Optional short description..."
+          ></textarea>
+
+          <button class="button button-primary" type="submit">
+            Add Manual Book
+          </button>
+        </form>
       </section>
     </main>
 

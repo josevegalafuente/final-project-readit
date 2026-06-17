@@ -421,3 +421,99 @@ h3 {
 .stacked-form textarea {
   resize: vertical;
 }
+
+.manual-book-message {
+  min-height: 1.5rem;
+  margin-top: 1rem;
+  font-weight: 600;
+}
+
+.manual-book-message.success {
+  color: #1f7a4d;
+}
+
+.manual-book-message.error {
+  color: #b42318;
+}
+
+.button,
+.book-card,
+.feature-card,
+.hero-card,
+.search-form,
+.stacked-form input,
+.stacked-form select,
+.stacked-form textarea,
+.text-link {
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.button:hover,
+.button:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(35, 87, 137, 0.22);
+}
+
+.book-card:hover,
+.book-card:focus-within {
+  transform: translateY(-4px);
+  box-shadow: 0 22px 50px rgba(31, 41, 51, 0.16);
+}
+
+.feature-card:hover,
+.hero-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 22px 50px rgba(31, 41, 51, 0.14);
+}
+
+.search-form:focus-within {
+  transform: scale(1.01);
+  border-color: var(--primary);
+  box-shadow: 0 16px 38px rgba(35, 87, 137, 0.16);
+}
+
+.stacked-form input:focus,
+.stacked-form select:focus,
+.stacked-form textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(35, 87, 137, 0.12);
+  transform: scale(1.01);
+}
+
+.text-link:hover,
+.text-link:focus {
+  color: var(--accent);
+}
+
+.logo-image {
+  transition: transform 0.25s ease;
+}
+
+.logo:hover .logo-image,
+.logo:focus .logo-image {
+  transform: rotate(-6deg) scale(1.06);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .button,
+  .book-card,
+  .feature-card,
+  .hero-card,
+  .search-form,
+  .stacked-form input,
+  .stacked-form select,
+  .stacked-form textarea,
+  .text-link,
+  .logo-image,
+  .progress-bar {
+    transition: none;
+    animation: none;
+    transform: none;
+  }
+}

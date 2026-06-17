@@ -414,6 +414,107 @@ function handleAddBookClicks() {
   });
 }
 
+function createManualBookId(title, author) {
+  const base = `${title}-${author}`
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+
+  return `manual-${base || Date.now()}-${Date.now()}`;
+}
+
+function showManualBookMessage(message, type = "success") {
+  const messageElement = document.querySelector("#manual-book-message");
+
+  if (!messageElement) {
+    return;
+  }
+
+  messageElement.textContent = message;
+  messageElement.className = `manual-book-message ${type}`;
+}
+
+function handleManualBookForm() {
+  const form = document.querySelector("#manual-book-form");
+  const titleInput = document.querySelector("#manual-book-title");
+  const authorInput = document.querySelector("#manual-book-author");
+  const pagesInput = document.querySelector("#manual-book-pages");
+  const categoryInput = document.querySelector("#manual-book-category");
+  const descriptionInput = document.querySelector("#manual-book-description");
+
+  if (
+    !form ||
+    !titleInput ||
+    !authorInput ||
+    !pagesInput ||
+    !categoryInput ||
+    !descriptionInput
+  ) {
+    return;
+  }
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const title = titleInput.value.trim();
+    const author = authorInput.value.trim();
+    const pageCount = Number(pagesInput.value);
+    const category = categoryInput.value.trim();
+    const description = descriptionInput.value.trim();
+
+    if (!title || !author || !category || pageCount <= 0) {
+      showManualBookMessage(
+        "Please complete the manual book form with valid information.",
+        "error",
+      );
+      return;
+    }
+
+    const savedBooks = getLibraryBooks();
+    const alreadyExists = savedBooks.some(
+      (book) =>
+        book.title.toLowerCase() === title.toLowerCase() &&
+        book.author.toLowerCase() === author.toLowerCase(),
+    );
+
+    if (alreadyExists) {
+      showManualBookMessage(
+        "This book is already saved in your library.",
+        "error",
+      );
+      return;
+    }
+
+    const manualBook = {
+      id: createManualBookId(title, author),
+      title,
+      author,
+      category,
+      description: description || "Manually added book.",
+      pageCount,
+      publishedDate: "Manual entry",
+      publisher: "Manual entry",
+      thumbnail: "",
+      infoLink: "",
+      source: "Manual Entry",
+    };
+
+    savedBooks.push(manualBook);
+    saveLibraryBooks(savedBooks);
+
+    form.reset();
+    showManualBookMessage(
+      `"${title}" was added to your library. You can now use it for Reading Plan and Notes.`,
+      "success",
+    );
+
+    renderLibraryPage();
+    populateReadingPlanBookOptions();
+    populateNotesBookOptions();
+  });
+}
+
 function renderLibraryPage() {
   const container = document.querySelector("#library-books");
   const emptyState = document.querySelector("#library-empty-state");
@@ -718,6 +819,7 @@ renderRecommendedBooks();
 handleHomeSearch();
 handleSearchPage();
 handleAddBookClicks();
+handleManualBookForm();
 handleRemoveBookClicks();
 renderLibraryPage();
 handleReadingPlanPage();
